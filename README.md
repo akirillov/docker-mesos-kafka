@@ -6,6 +6,9 @@ Apache Kafka on Apache Mesos in Docker
 This project simply encapsulates the `mesos/kafka` project in a Docker container to allow easy scheduling with Marathon. For all configration options please see: https://github.com/mesos/kafka#scheduler-configuration
 
 ```
-$ docker pull sagent/mesos-kafka
-$ docker run -d -p 7000:7000 sagent/mesos-kafka scheduler --master=master:5050 --zk=zookeeper:2181
+docker pull yagni/mesos-kafka
+docker run -p 7000:7000 yagni/mesos-kafka scheduler --master=leader.mesos:5050 --zk=leader.mesos:2181 --api=http://kafka-mesos.marathon.mesos:7000 --storage=zk:/kafka-mesos
 ```
+
+
+
